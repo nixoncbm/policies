@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad — Full Taxi</title>
+    <style>
+        :root {
+            --bg: #FBFBFC;
+            --surface: #FFFFFF;
+            --ink: #1A1D24;
+            --slate: #5A6472;
+            --muted: #8A94A3;
+            --line: #E5E8EE;
+            --accent: #1E4FA3;
+            --accent-soft: #EAF0FA;
+            --spring: #2E7D63;
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --measure: 68ch;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 4rem) clamp(1.25rem, 5vw, 3.5rem) 5rem;
+        }
+
+        /* ---------- Masthead ---------- */
+        .masthead {
+            border-top: 4px solid var(--accent);
+            padding-top: 2rem;
+            margin-bottom: 2.75rem;
+        }
+        .eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            margin: 0 0 0.75rem;
+        }
+        .masthead h1 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(2rem, 6vw, 3rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin: 0 0 1rem;
+            text-wrap: balance;
+        }
+        .lede {
+            color: var(--slate);
+            font-size: 1.05rem;
+            max-width: var(--measure);
+            margin: 0 0 1.75rem;
+        }
+        .updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--spring);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .updated::before {
+            content: "";
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--spring);
+        }
+
+        /* ---------- Responsable card ---------- */
+        .responsable {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            margin: 2.5rem 0 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem 2rem;
+        }
+        .responsable .field-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+            margin: 0 0 0.25rem;
+        }
+        .responsable .field-value {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--ink);
+        }
+        .responsable a { color: var(--accent); text-decoration: none; }
+        .responsable a:hover { text-decoration: underline; }
+
+        /* ---------- Table of contents ---------- */
+        .toc {
+            margin: 0 0 3.5rem;
+        }
+        .toc h2 {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--slate);
+            font-weight: 700;
+            margin: 0 0 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .toc ol {
+            list-style: none;
+            counter-reset: toc;
+            margin: 0;
+            padding: 0;
+            columns: 2;
+            column-gap: 2.5rem;
+        }
+        .toc li {
+            counter-increment: toc;
+            break-inside: avoid;
+            margin-bottom: 0.55rem;
+        }
+        .toc a {
+            display: flex;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--slate);
+            font-size: 0.92rem;
+            transition: color 0.15s ease;
+        }
+        .toc a::before {
+            content: counter(toc, decimal-leading-zero);
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            font-weight: 700;
+            flex: none;
+        }
+        .toc a:hover { color: var(--accent); }
+
+        /* ---------- Sections ---------- */
+        section {
+            counter-increment: sec;
+            padding-top: 2.5rem;
+            margin-top: 2.5rem;
+            border-top: 1px solid var(--line);
+            scroll-margin-top: 1.5rem;
+        }
+        section:first-of-type { border-top: none; }
+
+        section > h2 {
+            font-family: var(--serif);
+            font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin: 0 0 1.1rem;
+            text-wrap: balance;
+            display: flex;
+            align-items: baseline;
+            gap: 0.7rem;
+        }
+        section > h2 .num {
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: var(--accent-soft);
+            border-radius: 6px;
+            padding: 0.15rem 0.5rem;
+            letter-spacing: 0.02em;
+            font-variant-numeric: tabular-nums;
+            flex: none;
+            transform: translateY(-0.12em);
+        }
+
+        p, ul, ol.body-list { max-width: var(--measure); }
+        p { margin: 0 0 1rem; }
+        .subhead {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--spring);
+            margin: 1.6rem 0 0.6rem;
+        }
+
+        ul, ol.body-list {
+            margin: 0 0 1rem;
+            padding-left: 1.3rem;
+        }
+        li { margin-bottom: 0.4rem; }
+        ul { list-style: none; padding-left: 0; }
+        ul li {
+            position: relative;
+            padding-left: 1.4rem;
+        }
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: 0.15rem;
+            top: 0.72em;
+            width: 6px; height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+        a.inline:hover { border-bottom-color: var(--accent); }
+
+        strong { font-weight: 700; }
+        .brand { font-weight: 700; color: var(--ink); }
+
+        /* Definitions */
+        dl.defs { margin: 0; max-width: var(--measure); }
+        dl.defs > div {
+            padding: 0.85rem 0;
+            border-bottom: 1px dashed var(--line);
+        }
+        dl.defs > div:last-child { border-bottom: none; }
+        dl.defs dt { font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
+        dl.defs dd { margin: 0; color: var(--slate); }
+
+        /* Retention table */
+        .table-wrap { overflow-x: auto; margin: 0.5rem 0 1.5rem; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 380px;
+        }
+        thead th {
+            text-align: left;
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+            padding: 0 0 0.7rem;
+            border-bottom: 2px solid var(--ink);
+        }
+        tbody td {
+            padding: 0.8rem 1rem 0.8rem 0;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+        tbody td:first-child { font-weight: 600; }
+        tbody td.term {
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        .callout {
+            background: var(--accent-soft);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0;
+            max-width: var(--measure);
+            font-size: 0.95rem;
+            color: var(--ink);
+        }
+        .callout .label {
+            display: block;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Rights grid */
+        .rights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: var(--measure);
+            margin: 0.5rem 0 1.5rem;
+            padding: 0;
+        }
+        .rights li {
+            list-style: none;
+            padding: 0.4rem 0.85rem;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--slate);
+            margin: 0;
+        }
+        .rights li::before { display: none; }
+
+        /* Footer */
+        footer {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 4px solid var(--accent);
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+        footer .org { font-family: var(--serif); font-weight: 700; color: var(--ink); font-size: 1.1rem; margin: 0 0 0.4rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 560px) {
+            .toc ol { columns: 1; }
+            body { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+<article class="page">
+
+    <header class="masthead">
+        <p class="eyebrow">Clipp Ecuador S.A.S.</p>
+        <h1>Política de Privacidad de Full Taxi</h1>
+        <p class="lede">Términos bajo los cuales <span class="brand">Full Taxi</span> recopila, utiliza, almacena, protege, comparte y trata la información personal proporcionada por los usuarios de la aplicación móvil, el sitio web y los demás servicios del ecosistema.</p>
+        <span class="updated">Última actualización: Junio de 2026</span>
+    </header>
+
+    <div class="responsable" aria-label="Responsable del tratamiento">
+        <div>
+            <p class="field-label">Razón Social</p>
+            <p class="field-value">Clipp Ecuador S.A.S.</p>
+        </div>
+        <div>
+            <p class="field-label">RUC</p>
+            <p class="field-value">1191794482001</p>
+        </div>
+        <div>
+            <p class="field-label">Correo</p>
+            <p class="field-value"><a href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a></p>
+        </div>
+        <div>
+            <p class="field-label">Dirección</p>
+            <p class="field-value">Loja, Sector La Tebaida, calles México y Curazao, Ecuador.</p>
+        </div>
+        <div>
+            <p class="field-label">Sitio web</p>
+            <p class="field-value"><a href="https://oficial.clipp.app/">oficial.clipp.app</a></p>
+        </div>
+    </div>
+
+    <nav class="toc" aria-label="Contenido">
+        <h2>Contenido</h2>
+        <ol>
+            <li><a href="#s1">Términos y definiciones</a></li>
+            <li><a href="#s2">Responsable del tratamiento</a></li>
+            <li><a href="#s3">Alcance</a></li>
+            <li><a href="#s4">Legislación aplicable</a></li>
+            <li><a href="#s5">Consentimiento</a></li>
+            <li><a href="#s6">Datos que recopilamos</a></li>
+            <li><a href="#s7">Finalidad del tratamiento</a></li>
+            <li><a href="#s8">Compartición de información</a></li>
+            <li><a href="#s9">Transferencias internacionales</a></li>
+            <li><a href="#s10">Conservación de datos</a></li>
+            <li><a href="#s11">Seguridad de la información</a></li>
+            <li><a href="#s12">Derechos de los usuarios</a></li>
+            <li><a href="#s13">Datos de menores de edad</a></li>
+            <li><a href="#s14">Eliminación de cuentas</a></li>
+            <li><a href="#s15">Actualizaciones de esta Política</a></li>
+            <li><a href="#s16">Contacto</a></li>
+            <li><a href="#s17">Aceptación</a></li>
+        </ol>
+    </nav>
+
+    <p>En <span class="brand">Full Taxi</span> estamos comprometidos con la protección de la privacidad y el tratamiento responsable de los datos personales de nuestros usuarios, cumpliendo con la <strong>Ley Orgánica de Protección de Datos Personales de la República del Ecuador (LOPDP)</strong> y demás normativa aplicable. Al utilizar nuestros servicios, el usuario declara haber leído, comprendido y aceptado esta Política de Privacidad.</p>
+
+    <section id="s1">
+        <h2><span class="num">01</span> Términos y definiciones</h2>
+        <p>Para efectos de la presente Política se entenderá por:</p>
+        <dl class="defs">
+            <div>
+                <dt>Consentimiento</dt>
+                <dd>Manifestación de voluntad libre, específica, informada e inequívoca mediante la cual el titular autoriza el tratamiento de sus datos personales.</dd>
+            </div>
+            <div>
+                <dt>Datos personales</dt>
+                <dd>Información que identifica o hace identificable a una persona natural.</dd>
+            </div>
+            <div>
+                <dt>Titular</dt>
+                <dd>Persona natural cuyos datos personales son objeto de tratamiento.</dd>
+            </div>
+            <div>
+                <dt>Tratamiento</dt>
+                <dd>Toda operación realizada sobre datos personales, ya sea automatizada o manual, incluyendo recopilación, almacenamiento, consulta, modificación, utilización, transferencia, eliminación o anonimización.</dd>
+            </div>
+            <div>
+                <dt>Transferencia o comunicación</dt>
+                <dd>Cualquier revelación o entrega de datos personales a un tercero distinto del titular.</dd>
+            </div>
+        </dl>
+    </section>
+
+    <section id="s2">
+        <h2><span class="num">02</span> Responsable del tratamiento</h2>
+        <p>El responsable del tratamiento de los datos personales recopilados mediante <span class="brand">Full Taxi</span> es <strong>Clipp Ecuador S.A.S.</strong> (RUC 1191794482001), con domicilio en Ecuador, Loja, Sector La Tebaida, calles México y Curazao. Correo electrónico: <a class="inline" href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a>. Sitio web: <a class="inline" href="https://oficial.clipp.app/">https://oficial.clipp.app/</a>.</p>
+    </section>
+
+    <section id="s3">
+        <h2><span class="num">03</span> Alcance</h2>
+        <p>La presente Política aplica a todas las personas que utilicen los servicios de <span class="brand">Full Taxi</span>, incluyendo:</p>
+        <ul>
+            <li>Pasajeros.</li>
+            <li>Conductores.</li>
+            <li>Empresas afiliadas.</li>
+            <li>Usuarios registrados.</li>
+            <li>Visitantes del sitio web.</li>
+            <li>Personas que interactúen con cualquiera de nuestros servicios.</li>
+        </ul>
+    </section>
+
+    <section id="s4">
+        <h2><span class="num">04</span> Legislación aplicable</h2>
+        <p>Esta Política se rige por las leyes de la República del Ecuador, en especial por la Ley Orgánica de Protección de Datos Personales (LOPDP) y demás normativa relacionada. Toda controversia derivada de esta Política será resuelta por los tribunales competentes de la República del Ecuador.</p>
+    </section>
+
+    <section id="s5">
+        <h2><span class="num">05</span> Consentimiento</h2>
+        <p>Antes de utilizar <span class="brand">Full Taxi</span>, el usuario deberá leer esta Política de Privacidad. Al registrarse, acceder o utilizar cualquiera de nuestros servicios, el usuario manifiesta expresamente su consentimiento para el tratamiento de sus datos personales conforme a esta Política.</p>
+        <div class="callout">
+            <span class="label">Revocatoria</span>
+            El consentimiento podrá ser revocado en cualquier momento mediante solicitud dirigida a <a class="inline" href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a>. La revocatoria no afectará la legalidad del tratamiento realizado con anterioridad.
+        </div>
+    </section>
+
+    <section id="s6">
+        <h2><span class="num">06</span> Datos personales que recopilamos</h2>
+        <p>Dependiendo del uso de nuestros servicios podremos recopilar:</p>
+
+        <p class="subhead">Información de identificación</p>
+        <ul>
+            <li>Nombres y apellidos.</li>
+            <li>Documento de identidad.</li>
+            <li>Fotografía de perfil.</li>
+            <li>Fotografía del documento de identidad.</li>
+            <li>Fecha de nacimiento (cuando sea requerida).</li>
+        </ul>
+
+        <p class="subhead">Información de contacto</p>
+        <ul>
+            <li>Correo electrónico.</li>
+            <li>Número telefónico.</li>
+        </ul>
+
+        <p class="subhead">Información de ubicación</p>
+        <ul>
+            <li>Ubicación precisa mediante GPS.</li>
+            <li>Ubicación aproximada.</li>
+            <li>Historial de ubicación durante un servicio activo.</li>
+        </ul>
+        <p>Estos datos se utilizan para localizar conductores, calcular rutas, calcular tarifas, mejorar la seguridad, prevenir fraude y optimizar la prestación del servicio. Los pasajeros pueden deshabilitar el acceso a la ubicación desde su dispositivo; sin embargo, algunas funcionalidades podrían no estar disponibles.</p>
+
+        <p class="subhead">Información del dispositivo</p>
+        <ul>
+            <li>Dirección IP.</li>
+            <li>Modelo del dispositivo.</li>
+            <li>Sistema operativo e idioma.</li>
+            <li>Identificadores del dispositivo.</li>
+            <li>Operador móvil y tipo de red.</li>
+            <li>Información de diagnóstico.</li>
+        </ul>
+
+        <p class="subhead">Información de uso</p>
+        <ul>
+            <li>Historial de viajes y de solicitudes.</li>
+            <li>Valoraciones, comentarios y reportes.</li>
+            <li>Registros de actividad.</li>
+            <li>Errores de la aplicación.</li>
+        </ul>
+
+        <p class="subhead">Información financiera</p>
+        <p><span class="brand">Full Taxi</span> recopila únicamente la información necesaria para procesar pagos. <strong>No almacenamos números completos de tarjetas de crédito o débito en nuestros servidores.</strong> Los pagos son procesados por proveedores especializados que cumplen estándares internacionales de seguridad PCI-DSS.</p>
+        <div class="callout">
+            <span class="label">Proveedor de pagos</span>
+            PayPhone
+        </div>
+    </section>
+
+    <section id="s7">
+        <h2><span class="num">07</span> Finalidad del tratamiento</h2>
+        <p>Utilizamos los datos personales para:</p>
+        <ul>
+            <li>Crear cuentas de usuario y autenticar usuarios.</li>
+            <li>Prestar servicios de transporte y asignar conductores.</li>
+            <li>Calcular rutas y tarifas.</li>
+            <li>Procesar pagos y emitir comprobantes.</li>
+            <li>Brindar soporte y resolver reclamos.</li>
+            <li>Verificar identidad y prevenir fraude.</li>
+            <li>Mejorar nuestros servicios y desarrollar nuevas funcionalidades.</li>
+            <li>Cumplir obligaciones legales y tributarias.</li>
+            <li>Enviar comunicaciones relacionadas con el servicio.</li>
+            <li>Enviar promociones cuando exista autorización del usuario.</li>
+        </ul>
+    </section>
+
+    <section id="s8">
+        <h2><span class="num">08</span> Compartición de información</h2>
+        <p><span class="brand">Full Taxi</span> <strong>no vende datos personales.</strong> Los datos podrán compartirse únicamente con:</p>
+        <ul>
+            <li>Empresas afiliadas.</li>
+            <li>Proveedores tecnológicos.</li>
+            <li>Procesadores de pagos.</li>
+            <li>Servicios de mapas.</li>
+            <li>Servicios de notificaciones.</li>
+            <li>Autoridades competentes cuando exista obligación legal.</li>
+            <li>Órganos judiciales.</li>
+        </ul>
+        <p>Todos los terceros estarán obligados a mantener la confidencialidad y seguridad de la información.</p>
+    </section>
+
+    <section id="s9">
+        <h2><span class="num">09</span> Transferencias internacionales</h2>
+        <p>Cuando alguno de nuestros proveedores procese información fuera del Ecuador, dichas transferencias se realizarán cumpliendo las garantías previstas por la legislación aplicable.</p>
+    </section>
+
+    <section id="s10">
+        <h2><span class="num">10</span> Conservación de datos</h2>
+        <p><span class="brand">Full Taxi</span> conserva los datos personales únicamente durante el tiempo necesario para cumplir las finalidades descritas en esta Política y las obligaciones legales aplicables.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Tipo de información</th>
+                    <th scope="col">Tiempo de conservación</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>Datos de la cuenta</td><td class="term">5 años desde la última interacción</td></tr>
+                <tr><td>Historial de viajes</td><td class="term">5 años</td></tr>
+                <tr><td>Información de pagos</td><td class="term">5 años</td></tr>
+                <tr><td>Información tributaria</td><td class="term">5 años</td></tr>
+                <tr><td>Datos de ubicación</td><td class="term">5 años</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Cuando los datos ya no sean necesarios para las finalidades descritas, serán eliminados de forma segura o anonimizados de manera irreversible. Si el usuario solicita la eliminación de su cuenta, <span class="brand">Full Taxi</span> procederá a eliminar o anonimizar los datos personales en un plazo máximo de 5 años, salvo aquellos que deban conservarse por obligaciones legales, regulatorias, tributarias o por requerimiento de autoridad competente.</p>
+    </section>
+
+    <section id="s11">
+        <h2><span class="num">11</span> Seguridad de la información</h2>
+        <p><span class="brand">Full Taxi</span> implementa medidas técnicas y organizativas razonables para proteger los datos personales, incluyendo:</p>
+        <ul>
+            <li>Cifrado SSL/TLS.</li>
+            <li>Cifrado AES-256 cuando corresponda.</li>
+            <li>Control de acceso.</li>
+            <li>Autenticación segura.</li>
+            <li>Registro de eventos.</li>
+            <li>Copias de seguridad.</li>
+            <li>Monitoreo de incidentes.</li>
+        </ul>
+        <p>Aunque aplicamos medidas razonables de seguridad, ningún sistema es completamente invulnerable.</p>
+    </section>
+
+    <section id="s12">
+        <h2><span class="num">12</span> Derechos de los usuarios</h2>
+        <p>Los usuarios podrán ejercer los siguientes derechos:</p>
+        <ul class="rights">
+            <li>Acceso</li>
+            <li>Rectificación</li>
+            <li>Actualización</li>
+            <li>Eliminación</li>
+            <li>Oposición</li>
+            <li>Limitación del tratamiento</li>
+            <li>Portabilidad</li>
+            <li>Revocatoria del consentimiento</li>
+        </ul>
+        <p>Las solicitudes podrán realizarse al correo <a class="inline" href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a> o en la dirección Loja, Sector La Tebaida, calles México y Curazao.</p>
+        <div class="callout">
+            <span class="label">Tiempo máximo de respuesta</span>
+            3 días hábiles.
+        </div>
+    </section>
+
+    <section id="s13">
+        <h2><span class="num">13</span> Tratamiento de datos de menores de edad</h2>
+        <p>Los menores de edad no podrán utilizar los servicios de <span class="brand">Full Taxi</span> sin la autorización de sus padres o representantes legales. Si detectamos el tratamiento de datos personales de menores sin autorización, procederemos a su eliminación conforme a la normativa aplicable.</p>
+    </section>
+
+    <section id="s14">
+        <h2><span class="num">14</span> Eliminación de cuentas</h2>
+        <p>Los usuarios podrán solicitar la eliminación de su cuenta enviando una solicitud al correo <a class="inline" href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a>. Una vez recibida la solicitud:</p>
+        <ul>
+            <li>Se verificará la identidad del solicitante.</li>
+            <li>Se eliminarán o anonimizarán los datos personales que no deban conservarse por obligación legal.</li>
+            <li>Se notificará al usuario una vez concluido el proceso.</li>
+        </ul>
+        <div class="callout">
+            <span class="label">Tiempo estimado de eliminación</span>
+            30 días.
+        </div>
+    </section>
+
+    <section id="s15">
+        <h2><span class="num">15</span> Actualizaciones de esta Política</h2>
+        <p><span class="brand">Full Taxi</span> podrá modificar la presente Política de Privacidad cuando existan cambios legales, regulatorios o relacionados con nuestros servicios. Cuando las modificaciones sean significativas, se informará a los usuarios mediante la aplicación, el sitio web o correo electrónico. El uso continuado de los servicios implicará la aceptación de la versión vigente.</p>
+    </section>
+
+    <section id="s16">
+        <h2><span class="num">16</span> Contacto</h2>
+        <p>Para consultas relacionadas con privacidad o protección de datos:</p>
+        <ul>
+            <li><strong>Empresa:</strong> Clipp Ecuador S.A.S.</li>
+            <li><strong>Correo:</strong> <a class="inline" href="mailto:protecciondatos@clipp.app">protecciondatos@clipp.app</a></li>
+            <li><strong>Dirección:</strong> Ecuador, Loja, Sector La Tebaida, calles México y Curazao.</li>
+            <li><strong>Sitio web:</strong> <a class="inline" href="https://oficial.clipp.app/">https://oficial.clipp.app/</a></li>
+        </ul>
+    </section>
+
+    <section id="s17">
+        <h2><span class="num">17</span> Aceptación</h2>
+        <p>Al utilizar <span class="brand">Full Taxi</span>, el usuario declara haber leído, comprendido y aceptado la presente Política de Privacidad. Si el usuario no está de acuerdo con cualquiera de sus disposiciones, deberá abstenerse de utilizar la aplicación y los servicios ofrecidos por <span class="brand">Full Taxi</span>.</p>
+    </section>
+
+    <footer>
+        <p class="org">Clipp Ecuador S.A.S.</p>
+        <p>protecciondatos@clipp.app &nbsp;·&nbsp; Loja, Sector La Tebaida, calles México y Curazao, Ecuador &nbsp;·&nbsp; <a href="https://oficial.clipp.app/">oficial.clipp.app</a></p>
+        <p style="color:var(--muted);font-size:0.82rem;margin-top:0.75rem;">Política de Privacidad de Full Taxi — Última actualización: Junio de 2026.</p>
+    </footer>
+
+</article>
+</body>
+</html>
